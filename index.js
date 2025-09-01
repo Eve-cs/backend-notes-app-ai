@@ -8,6 +8,7 @@ import { connectMongo } from "./config/mongo.js";
 import limiter from "./middleware/rateLimiter.js";
 import errorHandler from "./middleware/errorHandler.js";
 import cookieParser from "cookie-parser";
+import serverless from "serverless-http";
 
 dotenv.config();
 
@@ -91,9 +92,10 @@ const PORT = process.env.PORT || 3000;
   try {
     await connectMongo();
     //await connectTurso();
-    app.listen(PORT, () => {
-      console.log(`Server listening on port ${PORT} ✅`);
-    });
+    //app.listen(PORT, () => {
+    //   console.log(`Server listening on port ${PORT} ✅`);
+    // });
+    serverless(app);
   } catch (err) {
     console.error("❌ Startup error:", err);
     process.exit(1);
