@@ -7,8 +7,8 @@ POST http://localhost:3030/users
 Content-Type: application/json
 
 {
-  "name": "Dundee",
-  "email": "Dundee@example.com"
+  "name": "Backpain",
+  "email": "NeedMilkTea@example.com"
 }
 
 ### Create another user
@@ -29,9 +29,9 @@ POST http://localhost:3030/notes
 Content-Type: application/json
 
 {
-  "title": "First Note",
-  "content": "This is Alice's first note.",
-  "tags": ["personal", "draft"],
+  "title": "First Note to order FOOD",
+  "content": "Hungy. Sent me food",
+  "tags": ["personal", "food"],
   "is_pinned": true,
   "user_id": 1
 }
