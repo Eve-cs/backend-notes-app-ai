@@ -92,7 +92,8 @@ const PORT = process.env.PORT || 3000;
   try {
     await connectMongo();
     await connectTurso();
-    app.listen(PORT, () => {
+    app.listen(PORT, "0.0.0.0", () => {
+      //add 0.0.0.0 to make it accessible from everywhere
       console.log(`Server listening on port ${PORT} ✅`);
     });
   } catch (err) {
