@@ -8,7 +8,7 @@ import { connectTurso, db } from "./config/turso.js";
 import limiter from "./middleware/rateLimiter.js";
 import errorHandler from "./middleware/errorHandler.js";
 import cookieParser from "cookie-parser";
-import serverless from "serverless-http";
+//import serverless from "serverless-http";
 
 dotenv.config();
 
@@ -42,7 +42,7 @@ app.get("/", (_req, res) => {
       <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Notes API</title>
+        <title>GadMe the gadget shop</title>
         <style>
           body {
             font-family: 'Segoe UI', sans-serif;
@@ -73,11 +73,11 @@ app.get("/", (_req, res) => {
       </head>
       <body>
         <div class="container">
-          <h1>📒 Welcome to the Notes API</h1>
-          <p>This is a simple REST API built with <strong>Express</strong> and <strong>LibSQL</strong>.</p>
+          <h1>🎮 Welcome to Our GadMe Backend 🎮</h1>
+          <p>This is a simple REST API built with <strong>Express</strong>.</p>
           <p>Try creating a note via <code>POST /notes</code> or explore routes like <code>/users</code> and <code>/notes-with-authors</code>.</p>
           <p>Use a REST client like <em>VSCode REST Client</em> or <em>Postman</em> to interact.</p>
-          <p>✨ Happy coding!</p>
+          <p>Happy SHOPPING!</p>
         </div>
       </body>
       </html>
@@ -93,7 +93,7 @@ const PORT = process.env.PORT || 3000;
     await connectMongo();
     await connectTurso();
     app.listen(PORT, "0.0.0.0", () => {
-      //add 0.0.0.0 to make it accessible from everywhere
+      //add 0.0.0.0 to make it accessible from everywhere but we don't do that when dev sth.
       console.log(`Server listening on port ${PORT} ✅`);
     });
   } catch (err) {
@@ -101,20 +101,6 @@ const PORT = process.env.PORT || 3000;
     process.exit(1);
   }
 })();
-
-// (async () => {
-//   try {
-//     await connectMongo();
-//     //await connectTurso();
-//     //app.listen(PORT, () => {
-//     //   console.log(`Server listening on port ${PORT} ✅`);
-//     // });
-//     serverless(app);
-//   } catch (err) {
-//     console.error("❌ Startup error:", err);
-//     process.exit(1);
-//   }
-// })();
 
 // Handle unhandled promise rejections globally
 process.on("unhandledRejection", (err) => {
